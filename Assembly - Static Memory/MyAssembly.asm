@@ -3,7 +3,8 @@
 .model flat, c
 .stack 100h
 .data
-count dword ?		; -------> ---- Assembly Adding Powers ----
+;count dword ?		; -------> ---- Assembly Adding Powers ----
+
 .code
 
 doit proc
@@ -11,6 +12,8 @@ doit proc
 	; this is a comment i can type whatever i like after a semicolon and assembler will ignore it
 	
 	; ----------------- Assembly - Static Memory ---------------------------------------
+
+	; Static - means its loaded, it exist for the entire duration of the program
 	; 3^5 = 3x3x3x3x3=243	; total sum 363, total hex 16B
 ;	 loop(ebx)		Power(eax)		totalSum(ecx)		totalHex
 ;		3^1				3				3					3
