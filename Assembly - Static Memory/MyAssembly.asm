@@ -5,6 +5,7 @@
 .data
 ;count dword ?		; -------> ---- Assembly Adding Powers ----
 
+count dword		; dword(doubleWord) 1byte=8bits, 2bytes=word, 4bytes(32bits)=2words -> dword
 .code
 
 doit proc
@@ -14,7 +15,10 @@ doit proc
 	; ----------------- Assembly - Static Memory ---------------------------------------
 
 	; Static - means its loaded, it exist for the entire duration of the program
+	; General Purpose Registers - eax, ebx, ecx, edx 
+	
 	; 3^5 = 3x3x3x3x3=243	; total sum 363, total hex 16B
+
 ;	 loop(ebx)		Power(eax)		totalSum(ecx)		totalHex
 ;		3^1				3				3					3
 ;		3^2				9				12					C
