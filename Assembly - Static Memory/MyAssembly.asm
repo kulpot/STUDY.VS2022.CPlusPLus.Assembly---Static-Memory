@@ -18,6 +18,7 @@ doit proc
 	
 	; 3^5 = 3x3x3x3x3=243	; total sum 363, total hex 16B
 
+
 ;	 loop(ebx)		Power(eax)		totalSum(ecx)		totalHex
 ;		3^1				3				3					3
 ;		3^2				9				12					C
@@ -35,9 +36,10 @@ again:
 	add ecx, eax
 	inc counter
 	cmp counter, 5
+	;cmp counter, 100		; overflow value of ECX = B6D41DB8, which is over 32bits  
 	jl again
 
-	ret
+	ret			; ecx --- holds the total value of 363 in Hex is 16B
 
 	; ----------------- Assembly - Adding Up to the Nth Power ----------------------------------
 	; 3^5 = 3x3x3x3x3=243	; total sum 363, total hex 16B
