@@ -10,7 +10,7 @@ doit proc
 
 	; this is a comment i can type whatever i like after a semicolon and assembler will ignore it
 	
-	; ----------------- Assembly - Adding Up to the Nth Power ----------------------------------
+	; ----------------- Assembly - Static Memory ---------------------------------------
 	; 3^5 = 3x3x3x3x3=243	; total sum 363, total hex 16B
 ;	 loop(ebx)		Power(eax)		totalSum(ecx)		totalHex
 ;		3^1				3				3					3
@@ -33,6 +33,30 @@ again:
 	jl again
 
 	ret
+
+	; ----------------- Assembly - Adding Up to the Nth Power ----------------------------------
+	; 3^5 = 3x3x3x3x3=243	; total sum 363, total hex 16B
+;	 loop(ebx)		Power(eax)		totalSum(ecx)		totalHex
+;		3^1				3				3					3
+;		3^2				9				12					C
+;		3^3				27				39					27
+;		3^4				81				120					78
+;		3^5				243				363					16B
+	; ----- initialization -----
+;	mov eax, 1
+;	mov	ebx, 3
+;	xor ecx, ecx
+;	xor edx, edx
+;
+;again:
+;	mul ebx,		
+;	add ecx, eax
+;	inc edx			; error loop 
+;	;cmp eax, 243
+;	cmp edx, 5
+;	jl again
+;
+;	ret
 
 	; ----------------- Assembly - Writing a Program to Add the Powers -------------------------
 
