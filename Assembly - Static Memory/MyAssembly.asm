@@ -4,8 +4,7 @@
 .stack 100h
 .data
 ;count dword ?		; -------> ---- Assembly Adding Powers ----
-
-count dword		; dword(doubleWord) 1byte=8bits, 2bytes=word, 4bytes(32bits)=2words -> dword
+	counter dword 0		; dword(doubleWord) is 32bits and 2words ---> 1byte=8bits, 2bytes=word, 4bytes(32bits)=2words -> dword
 .code
 
 doit proc
@@ -34,9 +33,8 @@ doit proc
 again:
 	mul ebx,		
 	add ecx, eax
-	inc edx			; error loop 
-	;cmp eax, 243
-	cmp edx, 5
+	inc counter
+	cmp counter, 5
 	jl again
 
 	ret
